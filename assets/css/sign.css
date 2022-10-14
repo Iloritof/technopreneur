@@ -102,7 +102,6 @@ main > * {
   justify-content: center;
   align-items: center;
   background-color: var(--white);
-  overflow: hidden;
 }
 
 .sign-form__content {
@@ -113,21 +112,21 @@ main > * {
 }
 
 .sign-form__register {
-  overflow: hidden;
   transition: all 0.7s;
 }
 
 .sign-form__login {
-  overflow: hidden;
   transition: all 0.7s;
 }
 
 .switch:not(:checked) ~ .sign-form .sign-form__login {
   flex: 0 1 0px;
+  overflow: hidden;
 }
 
 .switch:checked ~ .sign-form .sign-form__register {
   flex: 0 1 0px;
+  overflow: hidden;
 }
 
 .sign-form__content h1 {
@@ -203,5 +202,43 @@ main > * {
   75% {
     transform: rotateZ(2.5deg);
     transform: scale(1.2);
+  }
+}
+
+/***************************************
+****          RESPONSIVE           ****
+***************************************/
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+
+  main {
+    flex-direction: column;
+    margin: 2rem;
+    border-radius: 0px;
+  }
+
+  .main__bg {
+    height: 80%;
+    width: auto;
+  }
+
+  .sign-form {
+    padding: 3.5rem 2rem;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .btn {
+    padding: 1.4rem 1.6rem;
+  }
+
+  input {
+    font-size: 1.7rem;
+    padding: 0.8rem 1.4rem;
   }
 }
