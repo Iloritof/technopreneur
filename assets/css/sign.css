@@ -1,0 +1,207 @@
+main {
+  position: relative;
+  margin: 3rem;
+  flex: 1 1 100%;
+  background-color: var(--primary);
+  max-width: 140rem;
+  border-radius: 25px;
+  display: flex;
+  transition: all 01s;
+  box-shadow: var(--main-shadow);
+  overflow: hidden;
+  animation: bg-animation 1.5s ease-in;
+}
+
+main > * {
+  z-index: 10;
+}
+
+.main--white {
+  background-color: var(--white);
+}
+
+.main__bg {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 125%;
+}
+
+.main__bg--1 {
+  transform-origin: 50% 50%;
+  animation: bg-animation-1 15s linear infinite;
+}
+
+.main__bg--2 {
+  transform-origin: 50% 50%;
+  animation: bg-animation-2 12s linear infinite;
+}
+
+.main__bg--3 {
+  transform-origin: 50% 50%;
+  animation: bg-animation-3 7s linear infinite;
+}
+
+/***************************************
+****       SWITCH FUNCTIONALTY      ****
+***************************************/
+
+.switch-box {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.7s linear;
+}
+
+.switch-box * {
+  transition: all 0.7s linear;
+}
+
+.switch-box__text {
+  flex: 0 1 57%;
+  text-align: center;
+  color: var(--grey-light);
+}
+
+.switch-box__text > p {
+  margin: 1.5rem;
+}
+
+.switch {
+  visibility: hidden;
+  position: absolute;
+  z-index: 100;
+}
+
+.switch:checked ~ .switch-box--1 {
+  flex: 0 1 100px;
+}
+.switch:checked ~ .switch-box--1 * {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.switch:not(:checked) ~ .switch-box--2 {
+  flex: 0 1 100px;
+}
+.switch:not(:checked) ~ .switch-box--2 * {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+/***************************************
+****           SIGN FORM            ****
+***************************************/
+
+.sign-form {
+  flex: 0 1 43%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.sign-form__content {
+  flex-basis: 66.7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sign-form__register {
+  overflow: hidden;
+  transition: all 0.7s;
+}
+
+.sign-form__login {
+  overflow: hidden;
+  transition: all 0.7s;
+}
+
+.switch:not(:checked) ~ .sign-form .sign-form__login {
+  flex: 0 1 0px;
+}
+
+.switch:checked ~ .sign-form .sign-form__register {
+  flex: 0 1 0px;
+}
+
+.sign-form__content h1 {
+  color: var(--accent);
+  margin-bottom: 3.8rem;
+}
+
+.sign-form__content p {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/***************************************
+****           ANIMATION            ****
+***************************************/
+
+@keyframes bg-animation {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bg-animation-1 {
+  0%,
+  50%,
+  100% {
+    transform: rotateZ(0deg);
+    transform: scale(1);
+  }
+  25% {
+    transform: rotateZ(5deg);
+    transform: scale(0.85);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes bg-animation-2 {
+  0%,
+  50%,
+  100% {
+    transform: rotateZ(0deg);
+    transform: scale(1);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+    transform: scale(1.2);
+  }
+  75% {
+    transform: rotateZ(5deg);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes bg-animation-3 {
+  0%,
+  50%,
+  100% {
+    transform: rotateZ(0deg);
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.8);
+    transform: rotateZ(5deg);
+  }
+  75% {
+    transform: rotateZ(2.5deg);
+    transform: scale(1.2);
+  }
+}
