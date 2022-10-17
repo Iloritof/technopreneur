@@ -4,7 +4,6 @@ main {
   background-color: var(--white);
   max-width: 140rem;
   border-radius: 25px;
-  display: flex;
   transition: all 01s;
   box-shadow: var(--main-shadow);
   overflow: hidden;
@@ -45,6 +44,8 @@ nav {
 .board {
   flex: 0 1 60%;
   padding: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .board__header {
@@ -81,6 +82,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1 1 70%;
 }
 
 aside {
@@ -153,4 +155,50 @@ aside > *:not(:last-child) {
 
 .calendar__date--miss {
   border: 1px solid var(--accent);
+}
+
+/***************************************
+****          RESPONSIVE           ****
+***************************************/
+
+@media screen and (orientation: portrait) {
+  main {
+    flex-direction: column-reverse;
+    border-radius: 0;
+  }
+
+  nav {
+    flex-direction: row;
+    border-right: none;
+    border-top: 2px solid var(--grey);
+  }
+
+  aside {
+    display: none;
+  }
+
+  .nav__item--active {
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) -20%,
+      var(--primary) 250%
+    );
+    border-right: none;
+    border-top: 5px solid var(--primary);
+  }
+
+  .board {
+    flex: 1 1 70%;
+    overflow-y: scroll;
+  }
+
+  .board__header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn--board {
+    order: -1;
+    display: none;
+  }
 }

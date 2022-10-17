@@ -105,3 +105,39 @@ input:focus-visible {
   width: 100%;
   text-align: center;
 }
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+
+  .sign-form {
+    padding: 3.5rem 2rem;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .btn {
+    padding: 1.4rem 1.6rem;
+  }
+
+  input {
+    font-size: 1.7rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  main {
+    flex-direction: column;
+    margin: 2rem;
+    border-radius: 0px;
+  }
+
+  .main__bg {
+    height: 80%;
+    width: auto;
+  }
+}
